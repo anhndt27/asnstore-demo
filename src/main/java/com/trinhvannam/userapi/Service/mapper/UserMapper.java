@@ -15,9 +15,9 @@ public class UserMapper {
         user.setUserAddress(userDTO.getUserAddress());
         user.setUserEmail(userDTO.getUserEmail());
         user.setUserPhone(userDTO.getUserPhone());
-        user.setAdmin(false);
+        user.setAdmin(userDTO.isAdmin());
         user.setUserFirstName(userDTO.getUserFirstName());
-        user.setUserLastName(user.getUserLastName());
+        user.setUserLastName(userDTO.getUserLastName());
         return user;
     }
 }
