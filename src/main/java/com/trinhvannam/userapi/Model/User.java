@@ -39,7 +39,7 @@ public class User {
     private String userPass;
 
     @Column(name = "is_admin")
-    private String isAdmin;
+    private String userRole;
 
     @Column(name = "user_firstname")
     private String userFirstName;

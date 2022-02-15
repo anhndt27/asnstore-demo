@@ -11,7 +11,7 @@ public class UserRequestDTO {
     private String userEmail;
     private String userAddress;
     private String userPass;
-    private boolean isAdmin;
+    private String userRole;
     private String userFirstName;
     private String userLastName;
 //    private Date rememberToken;
@@ -66,12 +66,12 @@ public class UserRequestDTO {
         this.userPass = userPass;
     }
 
-    public boolean isAdmin() {
-        return isAdmin;
+    public String getUserRole() {
+        return userRole;
     }
 
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
+    public void setAdmin(String userRole) {
+        userRole = userRole;
     }
 
     public String getUserFirstName() {

@@ -65,7 +65,7 @@ public class UserController {
         updateUser.setUserEmail(userDetails.getUserEmail());
         updateUser.setUserAddress(userDetails.getUserAddress());
         updateUser.setUserPass(userDetails.getUserPass());
-        updateUser.setIsAdmin(userDetails.getIsAdmin());
+        updateUser.setUserRole(userDetails.getUserRole());
 
         userRepository.save(updateUser);
 

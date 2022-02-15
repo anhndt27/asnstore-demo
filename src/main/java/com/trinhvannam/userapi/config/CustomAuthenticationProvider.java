@@ -25,7 +25,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
             String comparePassword = user.getUserPass();
             if (password == comparePassword){
                  new UsernamePasswordAuthenticationToken(userName, password,
-                        Arrays.asList(new SimpleGrantedAuthority(user.getIsAdmin())));
+                        Arrays.asList(new SimpleGrantedAuthority(user.getUserRole())));
             }
         }
         return null;
