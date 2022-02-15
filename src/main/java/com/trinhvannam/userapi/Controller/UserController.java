@@ -8,6 +8,7 @@ import com.trinhvannam.userapi.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,6 +39,7 @@ public class UserController {
         return ResponseEntity.ok().body(userService.findUserByEmail(email));
     }
 
+
     // thêm user
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody UserRequestDTO userRequestDTO) {
@@ -63,7 +65,7 @@ public class UserController {
         updateUser.setUserEmail(userDetails.getUserEmail());
         updateUser.setUserAddress(userDetails.getUserAddress());
         updateUser.setUserPass(userDetails.getUserPass());
-        updateUser.setAdmin(userDetails.isAdmin());
+        updateUser.setIsAdmin(userDetails.getIsAdmin());
 
         userRepository.save(updateUser);
 

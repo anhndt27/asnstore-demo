@@ -39,7 +39,7 @@ public class User {
     private String userPass;
 
     @Column(name = "is_admin")
-    private boolean isAdmin;
+    private String isAdmin;
 
     @Column(name = "user_firstname")
     private String userFirstName;
@@ -50,6 +50,7 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("user")
     private List<Transaction> transactions = new ArrayList<>();
+
 
 //    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 //    @JsonIgnoreProperties("user")

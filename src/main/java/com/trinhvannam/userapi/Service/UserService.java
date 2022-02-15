@@ -9,4 +9,5 @@ public interface UserService {
     public User createNewUser(UserRequestDTO userRequestDTO);
     public List<User> findUserByName(String name);
     public List<User> findUserByEmail(String email);
+    public User findUserByUserName(String name);
 }
