@@ -18,20 +18,20 @@ import org.springframework.security.config.annotation.web.configurers.HttpBasicC
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class ApiConfigSecurity extends WebSecurityConfigurerAdapter {
 
+
     @Autowired
     private CustomAuthenticationProvider authProvider;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
-            HttpBasicConfigurer<HttpSecurity> user = http.csrf().disable()
-                    .authorizeRequests()
-                    .antMatchers("/").permitAll()
-                    .antMatchers("/user").hasAnyRole("false")
-                    .antMatchers("/admin").hasAnyRole("true")
-                    .anyRequest().authenticated()
-                    .and()
-                    .httpBasic();
+        http.csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/").permitAll()
+                .antMatchers("/user").hasAnyRole("USER")
+                .antMatchers("/api").hasAnyRole("ADMIN")
+                .anyRequest().authenticated()
+                .and()
+                .httpBasic();
     }
 
     @Override
